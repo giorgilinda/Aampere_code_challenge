@@ -9,7 +9,12 @@
   },
   "BaseTemplate": {
     "description": "Starter code for your Nextjs Boilerplate with Tailwind CSS",
-    "made_with": "Made with <author></author>."
+    "made_with": "Made with <author></author>.",
+    "aampere_motto": "Used electric mobility for Europe.",
+    "quick_links": "Quick links",
+    "about_aampere": "About Aampere",
+    "about_me": "About Linda Giorgi",
+    "contact": "Contact"
   },
   "Index": {
     "meta_title": "Next.js Boilerplate Presentation",
