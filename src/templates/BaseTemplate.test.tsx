@@ -1,52 +1,32 @@
 import messages from '@/locales/en.json';
-import { render, screen, within } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { NextIntlClientProvider } from 'next-intl';
 import { BaseTemplate } from './BaseTemplate';
 
 describe('Base template', () => {
   describe('Render method', () => {
-    it('should have 3 menu items', () => {
+    it('should have a link to my CV', () => {
       render(
         <NextIntlClientProvider locale="en" messages={messages}>
-          <BaseTemplate
-            leftNav={(
-              <>
-                <li>link 1</li>
-                <li>link 2</li>
-                <li>link 3</li>
-              </>
-            )}
-          >
+          <BaseTemplate>
             {null}
           </BaseTemplate>
         </NextIntlClientProvider>,
       );
 
-      const menuItemList = screen.getAllByRole('listitem');
-
-      expect(menuItemList).toHaveLength(3);
+      expect(screen.getAllByTestId('aboutMe').length).toBeGreaterThanOrEqual(1);
     });
 
-    it('should have a link to support creativedesignsguru.com', () => {
+    it('should have a link to Aampere website', () => {
       render(
         <NextIntlClientProvider locale="en" messages={messages}>
-          <BaseTemplate leftNav={<li>1</li>}>{null}</BaseTemplate>
+          <BaseTemplate>
+            {null}
+          </BaseTemplate>
         </NextIntlClientProvider>,
       );
 
-      const copyrightSection = screen.getByText(/© Copyright/);
-      const copyrightLink = within(copyrightSection).getByRole('link');
-
-      /*
-       * PLEASE READ THIS SECTION
-       * We'll really appreciate if you could have a link to our website
-       * The link doesn't need to appear on every pages, one link on one page is enough.
-       * Thank you for your support it'll mean a lot for us.
-       */
-      expect(copyrightLink).toHaveAttribute(
-        'href',
-        'https://creativedesignsguru.com',
-      );
+      expect(screen.getAllByTestId('aboutAampere').length).toBeGreaterThanOrEqual(1);
     });
   });
 });

@@ -18,8 +18,7 @@ export const BaseTemplate = (props: {
               <a href="https://www.aampere.com/" target="_blank" rel="noreferrer noopener">{t('about_aampere')}</a>
             </li>
             <li className="inline-block mr-[10px]">
-              {/* FIXME: add link to CV */}
-              <a href="https://github.com/giorgilinda" target="_blank" rel="noreferrer noopener">{t('about_me')}</a>
+              <a href="https://cv-iota-beryl.vercel.app/" target="_blank" rel="noreferrer noopener">{t('about_me')}</a>
             </li>
           </ul>
         </header>
@@ -35,12 +34,11 @@ export const BaseTemplate = (props: {
             <div className="text-left">
               <h3 className="font-semibold text-gray-500 mb-[10px]">{t('quick_links')}</h3>
               <ul>
-                <li>
+                <li data-testid="aboutAampere">
                   <a href="https://www.aampere.com/">{t('about_aampere')}</a>
                 </li>
-                <li>
-                  {/* FIXME: add link to CV */}
-                  <a href="https://github.com/giorgilinda">{t('about_me')}</a>
+                <li data-testid="aboutMe">
+                  <a href="https://cv-iota-beryl.vercel.app/">{t('about_me')}</a>
                 </li>
               </ul>
             </div>
