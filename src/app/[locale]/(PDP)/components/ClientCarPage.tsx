@@ -1,36 +1,40 @@
 'use client';
 
+import { findCars } from '@/utils/CarsUtils';
+import { Chip } from '@material-tailwind/react';
 import { useCarContext } from 'contexts/carContext';
 import { useFormatter } from 'next-intl';
-import React from 'react';
+import { usePathname } from 'next/navigation';
+import React, { useEffect } from 'react';
 
 type ClientCarPageProps = {
   translations: {
-    meta_title: string;
-    brand: string;
-    model: string;
-    year: string;
-    range_km: string;
-    color: string;
-    condition: string;
-    battery_capacity_kWh: string;
-    charging_speed_kW: string;
-    seats: string;
-    drivetrain: string;
-    location: string;
-    autopilot: string;
-    kilometer_count: string;
-    accidents: string;
-    submit_button: string;
+    [key: string]: string;
   };
 };
 
 const ClientCarPage: React.FC<ClientCarPageProps> = ({ translations }) => {
-  const { car } = useCarContext();
+  const pathname = usePathname();
+  const { car, saveCar } = useCarContext();
   const format = useFormatter();
-  console.log('🪳', { translations, car });
+
+  useEffect(() => {
+    if (!car) {
+      const url = pathname.split('/');
+      const carList = findCars(url[1] ?? '', url[2] ?? '');
+
+      if (carList.length === 0 || !carList[0]) {
+        // FIXME: not redirecting
+        throw new Error('Car not found');
+        //        return notFound;
+      }
+
+      saveCar(carList[0]);
+    }
+  }, [car]);
+
   // FIXME: add slider for pics
-  // FIXME: if car is missing get back to list
+  // FIXME: stupid material-tailwind
   // FIXME: add label to svgs
   // FIXME: add back button
   // FIXME: fix currency
@@ -45,12 +49,16 @@ const ClientCarPage: React.FC<ClientCarPageProps> = ({ translations }) => {
           <div className="w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
             <h2 className="text-sm title-font text-gray-500 tracking-widest">{car?.brand}</h2>
             <h1 className="text-gray-900 text-3xl title-font font-medium mb-4">{car?.model}</h1>
-            <img alt="ecommerce" className="w-full lg:h-auto h-auto object-cover object-center rounded" src={car?.images[0]} />
+            {/*
+            <Carousel className="h-200 rounded-xl">
+              {car?.images.map((image, key) => <img key={key} alt="ecommerce" className="h-full w-full object-cover" src={image} />)}
+            </Carousel>
+            */}
             <div className="mt-10 mb-5">
               <div className="flex border-t border-gray-200 py-2">
                 <span className="text-gray-500">{translations.condition}</span>
                 <span className="ml-auto text-gray-900">
-                  <span className="flex ml-auto text-white bg-[#3ec099] border-0 py-1 px-2 focus:outline-none hover:bg-[#3ec099] rounded-full">{car?.condition}</span>
+                  <Chip value={car?.condition} className="rounded-full bg-[#3ec099] border-0 py-1 px-2" />
                 </span>
               </div>
               <div className="flex border-t border-gray-200 py-2">
@@ -104,7 +112,7 @@ const ClientCarPage: React.FC<ClientCarPageProps> = ({ translations }) => {
 
             <div className="flex">
               <span className="title-font font-medium text-2xl text-gray-900">{format.number(car?.price ?? 0, { style: 'currency', currency: 'EUR' })}</span>
-              <button type="button" className="flex ml-auto text-white bg-[#3ec099] border-0 py-2 px-6 focus:outline-none hover:bg-[#37a987] rounded">{translations.submit_button}</button>
+              <button type="button" className="flex ml-auto text-white bg-[#3ec099] border-0 py-2 px-6 focus:outline-none hover:bg-[#3ec099] rounded">{translations.submit_button}</button>
             </div>
           </div>
         </div>
