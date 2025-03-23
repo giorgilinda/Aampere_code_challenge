@@ -11,16 +11,14 @@ const sendDefaults = {
 const productionURL = 'https://demo.nextjs-boilerplate.com';
 
 const emailChannel = new EmailAlertChannel('email-channel-1', {
-  // FIXME: add your own email address, Checkly will send you an email notification if a check fails
-  address: 'contact@creativedesignsguru.com',
+  address: 'giorgi.linde@gmail.com',
   ...sendDefaults,
 });
 
 export const config = defineConfig({
-  // FIXME: Add your own project name, logical ID, and repository URL
-  projectName: 'Next.js Boilerplate',
+  projectName: 'Aampere_code_challenge',
   logicalId: 'nextjs-boilerplate',
-  repoUrl: 'https://github.com/ixartz/Next-js-Boilerplate',
+  repoUrl: 'https://github.com/giorgilinda/Aampere_code_challenge',
   checks: {
     locations: ['us-east-1', 'eu-west-1'],
     tags: ['website'],

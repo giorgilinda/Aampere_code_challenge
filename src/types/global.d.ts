@@ -4,7 +4,7 @@ type Messages = typeof import('../locales/en.json');
 // eslint-disable-next-line
 declare interface IntlMessages extends Messages {}
 
-export type CarsType = {
+export type CarType = {
   brand: string;
   model: string;
   year: number;

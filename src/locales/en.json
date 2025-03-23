@@ -57,6 +57,7 @@
     "location": "Location",
     "autopilot": "Autopilot",
     "kilometer_count": "Kilometer count",
-    "accidents": "Accidents"
+    "accidents": "Accidents",
+    "submit_button": "Buy"
   }
 }
