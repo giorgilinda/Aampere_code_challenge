@@ -1,3 +1,12 @@
+# [1.2.0](https://github.com/giorgilinda/Aampere_code_challenge/compare/v1.1.0...v1.2.0) (2025-03-24)
+
+
+### Features
+
+* add PDP; fix some configuration ([4498e77](https://github.com/giorgilinda/Aampere_code_challenge/commit/4498e779570f716b19c371ea52a4bd586ddee6d9))
+* **filter and sort:** add filter and sorting options ([6e7a820](https://github.com/giorgilinda/Aampere_code_challenge/commit/6e7a8203ec7beb934a97266144547b90dcf1894b))
+* **PDP:** add material-tailwind; add func to search cars based on brand and model ([aa366e3](https://github.com/giorgilinda/Aampere_code_challenge/commit/aa366e385b7a5c37a1c55d853117d61463d1fd2b))
+
 # [1.1.0](https://github.com/giorgilinda/Aampere_code_challenge/compare/v1.0.0...v1.1.0) (2025-03-21)
 
 
