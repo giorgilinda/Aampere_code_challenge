@@ -1,3 +1,15 @@
+# [1.1.0](https://github.com/giorgilinda/Aampere_code_challenge/compare/v1.0.0...v1.1.0) (2025-03-21)
+
+
+### Bug Fixes
+
+* **tests:** fix tests for CI/CD ([645a0a1](https://github.com/giorgilinda/Aampere_code_challenge/commit/645a0a1f39494357ad3d8f2d70fbbb3ab57d063e))
+
+
+### Features
+
+* **card:** add data; draft of cards and card; ([bbcf67a](https://github.com/giorgilinda/Aampere_code_challenge/commit/bbcf67ae377020fd95f04d06d4584e847b98ea3d))
+
 # 1.0.0 (2025-03-21)
 
 
