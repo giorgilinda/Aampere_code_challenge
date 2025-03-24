@@ -1,3 +1,11 @@
+# [1.3.0](https://github.com/giorgilinda/Aampere_code_challenge/compare/v1.2.0...v1.3.0) (2025-03-24)
+
+
+### Features
+
+* **pagination:** add pagination ([77bb32d](https://github.com/giorgilinda/Aampere_code_challenge/commit/77bb32d6471a19886c316a8c048ed10aa28ada06))
+* **styles:** adjust styles ([6972130](https://github.com/giorgilinda/Aampere_code_challenge/commit/6972130863f256c892146a70c42aefcb8dc0fdae))
+
 # [1.2.0](https://github.com/giorgilinda/Aampere_code_challenge/compare/v1.1.0...v1.2.0) (2025-03-24)
 
 
