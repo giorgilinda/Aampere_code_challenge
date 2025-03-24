@@ -13,6 +13,7 @@ type RadioSelectDropdownProps = {
   onChange: (selectedOptions: string) => void;
   prompt?: string;
 };
+// FIXME: width of the dropdown
 
 export const RadioSelectDropdown: React.FC<RadioSelectDropdownProps> = ({ formFieldName, options, onChange, prompt = 'Select one or more options' }) => {
   const optionsListRef = useRef(null);
