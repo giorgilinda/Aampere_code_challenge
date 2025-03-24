@@ -47,16 +47,13 @@ export const Form: React.FC<FormProps> = ({ translations, onSubmit }) => {
     }
   };
 
-  // FIXME: it doesn't refresh list
   const sortChangeHandler = (selectedOptions: string) => {
-    const res = sortCars(selectedOptions);
-    console.log('🪳', { res });
-    onSubmit(res);
+    onSubmit(sortCars(selectedOptions));
   };
 
   return (
-    <form className="max-w-sm mx-auto" onSubmit={formSubmitHandler}>
-      <div>
+    <form className="mx-auto" onSubmit={formSubmitHandler}>
+      <div className="mx-2">
         <select id="search" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-s-lg focus:ring-blue-500 focus:border-blue-500 inline-block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
           <option>{translations.search_all}</option>
           <option>{translations.search_brand}</option>
@@ -67,9 +64,11 @@ export const Form: React.FC<FormProps> = ({ translations, onSubmit }) => {
           search
         </button>
       </div>
-      <MultiSelectDropdown formFieldName="year" options={extractValues('year')} onChange={filterChangeHandler} prompt={translations.filter_year} />
-      <MultiSelectDropdown formFieldName="condition" options={extractValues('condition')} onChange={filterChangeHandler} prompt={translations.filter_condition} />
-      <RadioSelectDropdown formFieldName="sort" options={sortOptions} onChange={sortChangeHandler} prompt={translations.sort} />
+      <div className="mx-auto my-5">
+        <MultiSelectDropdown formFieldName="year" options={extractValues('year')} onChange={filterChangeHandler} prompt={translations.filter_year} />
+        <MultiSelectDropdown formFieldName="condition" options={extractValues('condition')} onChange={filterChangeHandler} prompt={translations.filter_condition} />
+        <RadioSelectDropdown formFieldName="sort" options={sortOptions} onChange={sortChangeHandler} prompt={translations.sort} />
+      </div>
     </form>
   );
 };

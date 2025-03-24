@@ -1,10 +1,11 @@
 'use client';
 
 import { findCars } from '@/utils/CarsUtils';
-import { Chip } from '@material-tailwind/react';
+// @ts-expect-error : known issue of the component (https://github.com/Splidejs/splide/issues/1179)
+import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { useCarContext } from 'contexts/carContext';
 import { useFormatter } from 'next-intl';
-import { usePathname, useRouter } from 'next/navigation';
+import { notFound, usePathname, useRouter } from 'next/navigation';
 import React, { useEffect } from 'react';
 
 type ClientCarPageProps = {
@@ -25,18 +26,12 @@ const ClientCarPage: React.FC<ClientCarPageProps> = ({ translations }) => {
       const carList = findCars({ brand: url[1] ?? '', model: url[2] ?? '' });
 
       if (carList.length === 0 || !carList[0]) {
-        // FIXME: not redirecting
-        throw new Error('Car not found');
-        //        return notFound;
+        notFound();
       }
 
       saveCar(carList[0]);
     }
-  }, [car]);
-
-  // FIXME: add slider for pics
-  // FIXME: add label to svgs
-  // FIXME: fix currency
+  }, [car, pathname, saveCar]);
 
   const CHECK_MARK = <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="fill-current text-[#3ec099]"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" /></svg>;
   const CROSS_MARK = <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="fill-current text-[#3ec099]"><path d="M23 20.168l-8.185-8.187 8.185-8.174-2.832-2.807-8.182 8.179-8.176-8.179-2.81 2.81 8.186 8.196-8.186 8.184 2.81 2.81 8.203-8.192 8.18 8.192z" /></svg>;
@@ -53,12 +48,14 @@ const ClientCarPage: React.FC<ClientCarPageProps> = ({ translations }) => {
           <div className="w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
             <h2 className="text-sm title-font text-gray-500 tracking-widest">{car?.brand}</h2>
             <h1 className="text-gray-900 text-3xl title-font font-medium mb-4">{car?.model}</h1>
-            {/* car?.images.map((image, key) => <img key={key} alt="ecommerce" className="h-full w-full object-cover" src={image} />) */}
+            <Splide aria-label="My Favorite Images">
+              {car?.images.map((image, key) => <SplideSlide key={key}><img alt="ecommerce" className="h-full w-full object-cover" src={image} /></SplideSlide>)}
+            </Splide>
             <div className="mt-10 mb-5">
               <div className="flex border-t border-gray-200 py-2">
                 <span className="text-gray-500">{translations.condition}</span>
                 <span className="ml-auto text-gray-900">
-                  <Chip value={car?.condition} className="rounded-full bg-[#3ec099] border-0 py-1 px-2" />
+                  <span className="rounded-full bg-[#3ec099] border-0 py-1 px-2">{car?.condition}</span>
                 </span>
               </div>
               <div className="flex border-t border-gray-200 py-2">

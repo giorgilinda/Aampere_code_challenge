@@ -49,7 +49,7 @@
     "search_model": "Model",
     "filter_year": "Year",
     "filter_condition": "Condition",
-    "sort": "Sort list",
+    "sort": "Sort",
     "sort_year": "Year",
     "sort_range_km": "Range (km)",
     "sort_kilometer_count": "Kilometer count"

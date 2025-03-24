@@ -1,7 +1,7 @@
 'use client';
 
 import type { CarType } from '@/types/global';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import json from '../../../../../public/vehicle_data.json';
 import { Form } from './Form';
 import { ListCards } from './ListCards';
@@ -15,12 +15,8 @@ type ClientWrapperProps = {
 export const ClientWrapper: React.FC<ClientWrapperProps> = ({ translations }) => {
   const [results, setResults] = useState<CarType[]>(json.data);
 
-  useEffect(() => {
-    console.log('🪳', { results });
-  }, [results]);
-
   const handleFormSubmit = (res: CarType[]) => {
-    setResults(res);
+    setResults([...res]);
   };
 
   return (

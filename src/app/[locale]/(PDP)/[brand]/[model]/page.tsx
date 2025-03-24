@@ -19,7 +19,6 @@ export async function generateMetadata({ params }: IIndexProps) {
   };
 }
 
-// FIXME: fix console warnings
 export default async function Index({ params }: IIndexProps) {
   const t = await getTranslations({
     locale: params.locale,

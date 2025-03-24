@@ -16,7 +16,6 @@ export const Card: FC<PropsWithChildren<CardProps>> = ({ data }) => {
     saveCar(data);
   };
 
-  // FIXME: add slider for pics
   return (
     <div className="lg:w-1/3 md:w-1/2 p-4 w-full">
       <Link
