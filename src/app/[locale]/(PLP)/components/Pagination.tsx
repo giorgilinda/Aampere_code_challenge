@@ -20,9 +20,9 @@ export const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages,
   return (
     <>
       <section className="text-gray-600 body-font">
-        <div className="container px-5 py-24 mx-auto">
+        <div className="container px-5 py-5 mx-auto">
           <nav aria-label="Page navigation">
-            <ul className="flex items-center -space-x-px h-10 text-base">
+            <ul className="flex items-center -space-x-px h-10 text-base justify-center">
               <li>
                 <button type="button" onClick={() => buttonClickHandler(currentPage - 1)} disabled={currentPage === 1} className={`${arrowStyles} ms-0 rounded-s-lg border-e-0 ${currentPage === 1 ? 'bg-gray-200' : 'bg-white'}`}>
                   <span className="sr-only">Previous</span>

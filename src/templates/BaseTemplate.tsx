@@ -11,7 +11,7 @@ export const BaseTemplate = (props: {
   return (
     <div className="w-full px-1 text-gray-700 antialiased">
       <div className="mx-auto max-w-screen-md">
-        <header className="border-b border-gray-300 grid grid-flow-col gap-3 p-[10px]">
+        <header className="border-b border-gray-300 block md:grid md:grid-flow-col md:gap-3 p-[10px]">
           <Image src="https://cdn.prod.website-files.com/666c0a2a385ccdbbe1372d14/669586ee210ba8c0824aeb63_aa-logo-horizontal.svg" alt="Aampere logo" width={123} height={32} />
           <ul className="text-right">
             <li className="inline-block mr-[10px]">
@@ -26,12 +26,12 @@ export const BaseTemplate = (props: {
         <main>{props.children}</main>
 
         <footer className="border-t border-gray-300 py-8 text-center text-sm">
-          <div className="grid grid-cols-3 gap-3">
-            <div>
+          <div className="block md:grid md:grid-cols-3 md:gap-3">
+            <div className="p-5">
               <Image src="https://cdn.prod.website-files.com/666c0a2a385ccdbbe1372d14/669586ee210ba8c0824aeb63_aa-logo-horizontal.svg" alt="Aampere logo" width={123} height={32} />
               <p><small>{t('aampere_motto')}</small></p>
             </div>
-            <div className="text-left">
+            <div className="text-left p-5">
               <h3 className="font-semibold text-gray-500 mb-[10px]">{t('quick_links')}</h3>
               <ul>
                 <li data-testid="aboutAampere">
@@ -42,7 +42,7 @@ export const BaseTemplate = (props: {
                 </li>
               </ul>
             </div>
-            <div className="text-left">
+            <div className="text-left p-5">
               <h3 className="font-semibold text-gray-500 mb-[10px]">{t('contact')}</h3>
               <ul>
                 <li>

@@ -28,15 +28,15 @@ export const ListCards: React.FC<ListCardsProps> = ({ data }) => {
   return (
     <>
       <section className="text-gray-600 body-font">
-        <div className="container px-5 py-24 mx-auto">
+        <div className="container px-5 py-10 mx-auto">
+          <div className="flex flex-wrap -m-4">
+            {currentItems.map((car, index) => (<Card key={index} data={car} />))}
+          </div>
           <Pagination
             currentPage={currentPage}
             totalPages={totalPages}
             onPageChange={handlePageChange}
           />
-          <div className="flex flex-wrap -m-4">
-            {currentItems.map((car, index) => (<Card key={index} data={car} />))}
-          </div>
         </div>
       </section>
     </>

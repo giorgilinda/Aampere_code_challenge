@@ -35,7 +35,6 @@ const aj = arcjet.withRule(
   }),
 );
 
-// FIXME: mobile version
 export default async function RootLayout(props: {
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
