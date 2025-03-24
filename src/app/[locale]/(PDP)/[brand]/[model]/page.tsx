@@ -43,6 +43,7 @@ export default async function Index({ params }: IIndexProps) {
     kilometer_count: t('kilometer_count'),
     accidents: t('accidents'),
     submit_button: t('submit_button'),
+    back: t('back'),
   };
 
   return <ClientCarPage translations={translations} />;

@@ -42,6 +42,18 @@
     "user_profile_link": "Manage your account",
     "sign_out": "Sign out"
   },
+  "List": {
+    "meta_title": "List",
+    "search_all": "All",
+    "search_brand": "Brand",
+    "search_model": "Model",
+    "filter_year": "Year",
+    "filter_condition": "Condition",
+    "sort": "Sort",
+    "sort_year": "Year",
+    "sort_range_km": "Range (km)",
+    "sort_kilometer_count": "Kilometer count"
+  },
   "Card": {
     "meta_title": "Card",
     "brand": "Brand",
@@ -58,6 +70,7 @@
     "autopilot": "Autopilot",
     "kilometer_count": "Kilometer count",
     "accidents": "Accidents",
-    "submit_button": "Buy"
+    "submit_button": "Buy",
+    "back": "Back to the list"
   }
 }
