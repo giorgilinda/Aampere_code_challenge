@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/giorgilinda/Aampere_code_challenge/compare/v1.3.0...v1.4.0) (2025-03-24)
+
+
+### Features
+
+* **mix:** see long desc ([c1f1ba8](https://github.com/giorgilinda/Aampere_code_challenge/commit/c1f1ba8856e37d61e2e517e85bc07219dff9b9cf))
+
 # [1.3.0](https://github.com/giorgilinda/Aampere_code_challenge/compare/v1.2.0...v1.3.0) (2025-03-24)
 
 
