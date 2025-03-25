@@ -30,7 +30,7 @@ export const Card: FC<PropsWithChildren<CardProps>> = ({ data }) => {
             objectFit="contain"
             alt="ecommerce"
             className="object-cover object-center w-full h-full block"
-            src={data.images[0] ?? ''}
+            src={`${data.images[0]}?w=400q=75`}
           />
         </div>
       </Link>

@@ -58,7 +58,7 @@ const ClientCarPage: React.FC<ClientCarPageProps> = ({ translations }) => {
                       objectFit="contain"
                       alt="ecommerce"
                       className="h-full w-full object-cover"
-                      src={image}
+                      src={`${image}?w=400q=75`}
                     />
                   </div>
                 </SplideSlide>

@@ -28,9 +28,7 @@ export default withSentryConfig(
           {
             protocol: 'https',
             hostname: 'ev-database.org',
-            port: '',
             pathname: '/img/auto/**',
-            search: '',
           },
         ],
       },
