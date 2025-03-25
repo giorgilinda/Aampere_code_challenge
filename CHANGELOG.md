@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/giorgilinda/Aampere_code_challenge/compare/v1.5.0...v1.5.1) (2025-03-25)
+
+
+### Bug Fixes
+
+* **images:** try to fix issue with Vercel and images ([a54b905](https://github.com/giorgilinda/Aampere_code_challenge/commit/a54b90558e6e2f472967e3c6cdb51ee5936074d7))
+
 # [1.5.0](https://github.com/giorgilinda/Aampere_code_challenge/compare/v1.4.0...v1.5.0) (2025-03-25)
 
 
