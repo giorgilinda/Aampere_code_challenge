@@ -3,8 +3,9 @@
 import { findCars } from '@/utils/CarsUtils';
 // @ts-expect-error : known issue of the component (https://github.com/Splidejs/splide/issues/1179)
 import { Splide, SplideSlide } from '@splidejs/react-splide';
-import { useCarContext } from 'contexts/carContext';
+import { useCarContext } from 'hooks/useCarContext';
 import { useFormatter } from 'next-intl';
+import Image from 'next/image';
 import { notFound, usePathname, useRouter } from 'next/navigation';
 import React, { useEffect } from 'react';
 
@@ -49,7 +50,7 @@ const ClientCarPage: React.FC<ClientCarPageProps> = ({ translations }) => {
             <h2 className="text-sm title-font text-gray-500 tracking-widest">{car?.brand}</h2>
             <h1 className="text-gray-900 text-3xl title-font font-medium mb-4">{car?.model}</h1>
             <Splide aria-label="My Favorite Images">
-              {car?.images.map((image, key) => <SplideSlide key={key}><img alt="ecommerce" className="h-full w-full object-cover" src={image} /></SplideSlide>)}
+              {car?.images.map((image, key) => <SplideSlide key={key}><Image alt="ecommerce" className="h-full w-full object-cover" src={image} /></SplideSlide>)}
             </Splide>
             <div className="mt-10 mb-5">
               <div className="flex border-t border-gray-200 py-2">

@@ -2,14 +2,13 @@
 
 import type { CarType } from '@/types/global';
 import type { ReactNode } from 'react';
-import { createContext, useContext, useState } from 'react';
+import { CarContext } from 'hooks/useCarContext';
+import { useState } from 'react';
 
-type CarContextType = {
+export type CarContextType = {
   car: CarType | null;
   saveCar: (car: CarType) => void;
 };
-
-const CarContext = createContext<CarContextType | undefined>(undefined);
 
 export const CarProvider = ({ children }: { children: ReactNode }) => {
   const [car, setCar] = useState<CarType | null>(null);
@@ -23,12 +22,4 @@ export const CarProvider = ({ children }: { children: ReactNode }) => {
       {children}
     </CarContext>
   );
-};
-
-export const useCarContext = () => {
-  const context = useContext(CarContext);
-  if (!context) {
-    throw new Error('useCarContext must be used within a CarProvider');
-  }
-  return context;
 };

@@ -1,13 +1,13 @@
-// pages/index.tsx (Server Component)
 import ClientCarPage from '@/app/[locale]/(PDP)/components/ClientCarPage';
 import { getTranslations } from 'next-intl/server';
 import React from 'react';
 
 type IIndexProps = {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 };
 
-export async function generateMetadata({ params }: IIndexProps) {
+export async function generateMetadata(props: IIndexProps) {
+  const params = await props.params;
   const t = await getTranslations({
     locale: params.locale,
     namespace: 'Index',
@@ -19,7 +19,8 @@ export async function generateMetadata({ params }: IIndexProps) {
   };
 }
 
-export default async function Index({ params }: IIndexProps) {
+export default async function Index(props: IIndexProps) {
+  const params = await props.params;
   const t = await getTranslations({
     locale: params.locale,
     namespace: 'Card',
