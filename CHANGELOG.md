@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/giorgilinda/Aampere_code_challenge/compare/v1.4.0...v1.5.0) (2025-03-25)
+
+
+### Features
+
+* **console:** fix warnings ([10bc2de](https://github.com/giorgilinda/Aampere_code_challenge/commit/10bc2de43d615cd578886a78cbe575c8221c1a17))
+
 # [1.4.0](https://github.com/giorgilinda/Aampere_code_challenge/compare/v1.3.0...v1.4.0) (2025-03-24)
 
 
