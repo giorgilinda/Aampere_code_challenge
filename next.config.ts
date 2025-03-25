@@ -19,6 +19,21 @@ export default withSentryConfig(
       poweredByHeader: false,
       reactStrictMode: true,
       serverExternalPackages: ['@electric-sql/pglite'],
+      images: {
+        remotePatterns: [
+          {
+            protocol: 'https',
+            hostname: '**.vercel.app',
+          },
+          {
+            protocol: 'https',
+            hostname: 'ev-database.org',
+            port: '',
+            pathname: '/img/auto/**',
+            search: '',
+          },
+        ],
+      },
     }),
   ),
   {

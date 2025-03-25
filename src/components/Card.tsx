@@ -24,7 +24,15 @@ export const Card: FC<PropsWithChildren<CardProps>> = ({ data }) => {
         href={`${data.brand}/${data.model}`}
         onClick={onLinkClick}
       >
-        <Image alt="ecommerce" className="object-cover object-center w-full h-full block" src={data.images[0] ?? ''} />
+        <div className="relative aspect-square w-full h-auto">
+          <Image
+            layout="fill"
+            objectFit="contain"
+            alt="ecommerce"
+            className="object-cover object-center w-full h-full block"
+            src={data.images[0] ?? ''}
+          />
+        </div>
       </Link>
       <div className="mt-4">
         <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">{data.brand.toUpperCase()}</h3>

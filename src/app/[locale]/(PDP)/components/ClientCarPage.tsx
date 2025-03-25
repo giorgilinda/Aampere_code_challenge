@@ -49,13 +49,25 @@ const ClientCarPage: React.FC<ClientCarPageProps> = ({ translations }) => {
           <div className="w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
             <h2 className="text-sm title-font text-gray-500 tracking-widest">{car?.brand}</h2>
             <h1 className="text-gray-900 text-3xl title-font font-medium mb-4">{car?.model}</h1>
-            <Splide aria-label="My Favorite Images">
-              {car?.images.map((image, key) => <SplideSlide key={key}><Image alt="ecommerce" className="h-full w-full object-cover" src={image} /></SplideSlide>)}
+            <Splide aria-label="Car images">
+              {car?.images.map((image, key) => (
+                <SplideSlide key={key}>
+                  <div className="relative aspect-square w-full h-auto">
+                    <Image
+                      layout="fill"
+                      objectFit="contain"
+                      alt="ecommerce"
+                      className="h-full w-full object-cover"
+                      src={image}
+                    />
+                  </div>
+                </SplideSlide>
+              ))}
             </Splide>
             <div className="mt-10 mb-5">
               <div className="flex border-t border-gray-200 py-2">
                 <span className="text-gray-500">{translations.condition}</span>
-                <span className="ml-auto text-gray-900">
+                <span className="ml-auto text-white">
                   <span className="rounded-full bg-[#3ec099] border-0 py-1 px-2">{car?.condition}</span>
                 </span>
               </div>
