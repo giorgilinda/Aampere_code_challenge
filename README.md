@@ -39,6 +39,7 @@ Refer to the [package.json](https://github.com/giorgilinda/Aampere_code_challeng
 | Playwright | \>=1.50.1  |
 
 ## Project Structure
+```shell
 .
 ├── README.md                       # README file
 ├── .github                         # GitHub folder
@@ -63,6 +64,7 @@ Refer to the [package.json](https://github.com/giorgilinda/Aampere_code_challeng
 │   └── integration                 # Integration tests
 ├── tailwind.config.js              # Tailwind CSS configuration
 └── tsconfig.json                   # TypeScript configuration
+```
 
 ## Testing
 Due to time restriction, I decided to create only an example of unit testing (using Jest) for one file (CarsUtil.tsx), but the project is setup in a way it could be easily contain also e2e and integration testing (using Playwright).
